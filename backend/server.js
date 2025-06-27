@@ -19,11 +19,13 @@ app.use(express.json());
 const authRoutes = require('./routes/auth.routes');
 const userRoutes = require('./routes/user.routes');
 const chatRoutes = require('./routes/chat.routes');
+const volunteerRoutes = require('./routes/volunteer.routes');
 
 // Use routes
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/chat', chatRoutes);
+app.use('/api/volunteer', volunteerRoutes);
 
 // Error handling middleware
 app.use(notFound);

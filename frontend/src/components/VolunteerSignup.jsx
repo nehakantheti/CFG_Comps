@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const VolunteerSignup = () => {
   const [formData, setFormData] = useState({
@@ -32,7 +33,7 @@ const VolunteerSignup = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     setSuccess(false);
@@ -44,21 +45,29 @@ const VolunteerSignup = () => {
       return;
     }
 
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Volunteer data submitted:", formData);
-      setSuccess(true);
+    try {
+      const response = await axios.post('http://localhost:5000/api/volunteer', formData);
+      
+      if (response.data.success) {
+        setSuccess(true);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          city: '',
+          contributions: [],
+          availability: '',
+          message: ''
+        });
+      }
+    } catch (error) {
+      setError(
+        error.response?.data?.message || 
+        'An error occurred while submitting the form. Please try again.'
+      );
+    } finally {
       setLoading(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        city: '',
-        contributions: [],
-        availability: '',
-        message: ''
-      });
-    }, 1000);
+    }
   };
 
   return (

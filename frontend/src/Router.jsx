@@ -5,6 +5,7 @@ import Registration from "./components/Registration";
 import Login from "./components/Login";
 import VolunteerSignup from "./components/VolunteerSignup";
 import Profile from "./components/Profile";
+import Contact from "./components/Contact";
 
 
 const AppRoutes = () => {
@@ -15,6 +16,7 @@ const AppRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/volunteer-signup" element={<VolunteerSignup />} />
+      <Route path="/contact" element={<Contact />} />
 
       
     </Routes>

@@ -12,4 +12,6 @@ export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localho
 export const ENDPOINTS = {
   REGISTER: `${API_BASE_URL}/auth/register`,
   LOGIN: `${API_BASE_URL}/auth/login`,
+  PROFILE: `${API_BASE_URL}/user/profile`,
+  UPDATE_PROFILE: `${API_BASE_URL}/user/profile`,
 }; 

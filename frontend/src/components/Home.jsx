@@ -1,15 +1,39 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from 'react';
 
 const Home = () => {
-  return (
-    <div>
-      <Link
-  to="/volunteer-signup"
-  className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold py-2.5 px-6 rounded-xl text-sm md:text-base mt-4"
->Volunteer-Signup Page</Link>
-    </div>
-  )
-}
+  const styles = {
+    container: {
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+    },
+    main: {
+      flex: 1,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '2rem',
+      textAlign: 'center',
+    },
+    welcomeText: {
+      fontSize: '2rem',
+      marginBottom: '1rem',
+    },
+  };
 
-export default Home
+  return (
+    <div style={styles.container}>
+
+      {/* Main Content */}
+      <main style={styles.main}>
+        <div>
+          <h1 style={styles.welcomeText}>Welcome to the Dashboard</h1>
+          <p>Your central hub for managing volunteer activities</p>
+        </div>
+      </main>
+
+    </div>
+  );
+};
+
+export default Home;

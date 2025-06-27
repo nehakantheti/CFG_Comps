@@ -45,11 +45,11 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex">
-      <div className="w-1/2 flex flex-col justify-center p-12 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div className="min-h-screen flex flex-col md:flex-row bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <div className="w-full md:w-1/2 flex flex-col justify-center p-6 md:p-12">
         <div className="max-w-md mx-auto w-full">
-          <h2 className="text-3xl font-bold text-white text-center">Login</h2>
-          <p className="text-gray-400 text-center mt-2">
+          <h2 className="text-2xl md:text-3xl font-bold text-white text-center">Login</h2>
+          <p className="text-gray-400 text-center mt-2 text-sm md:text-base">
             Don't have an account?{' '}
             <Link to="/register" className="text-blue-500 hover:underline">
               Register here
@@ -57,12 +57,12 @@ const Login = () => {
           </p>
 
           {error && (
-            <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+            <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded text-sm">
               {error}
             </div>
           )}
 
-          <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
+          <form className="mt-6 md:mt-8 space-y-4 md:space-y-5" onSubmit={handleSubmit}>
             <div>
               <label className="block text-gray-300 text-sm font-medium">Email</label>
               <input
@@ -72,7 +72,7 @@ const Login = () => {
                 onChange={handleChange}
                 placeholder="Enter your email"
                 required
-                className="mt-1 w-full p-3 rounded-xl bg-gray-800 border border-gray-700 text-white focus:border-blue-500 focus:outline-none"
+                className="mt-1 w-full p-2.5 md:p-3 rounded-xl bg-gray-800 border border-gray-700 text-white focus:border-blue-500 focus:outline-none text-sm md:text-base"
               />
             </div>
             <div>
@@ -84,7 +84,7 @@ const Login = () => {
                 onChange={handleChange}
                 placeholder="Enter your password"
                 required
-                className="mt-1 w-full p-3 rounded-xl bg-gray-800 border border-gray-700 text-white focus:border-blue-500 focus:outline-none"
+                className="mt-1 w-full p-2.5 md:p-3 rounded-xl bg-gray-800 border border-gray-700 text-white focus:border-blue-500 focus:outline-none text-sm md:text-base"
               />
             </div>
             <div className="flex items-center space-x-2">
@@ -103,7 +103,7 @@ const Login = () => {
             <button
               type="submit"
               disabled={loading}
-              className={`w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold py-3 rounded-xl ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
+              className={`w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold py-2.5 md:py-3 rounded-xl text-sm md:text-base ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
             >
               {loading ? 'Logging in...' : 'Login'}
             </button>
@@ -111,11 +111,11 @@ const Login = () => {
         </div>
       </div>
 
-      <div className="w-1/2 flex items-center justify-center bg-gradient-to-tl from-blue-600 via-purple-600 to-gray-900">
+      <div className="w-full md:w-1/2 p-6 flex items-center justify-center bg-gradient-to-tl from-blue-600 via-purple-600 to-gray-900 order-first md:order-last">
         <img
           src="sidelogo.png"
           alt="Side Logo"
-          className="rounded-2xl shadow-2xl w-3/4 h-auto object-cover"
+          className="rounded-2xl shadow-2xl w-1/2 md:w-3/4 h-auto object-cover"
         />
       </div>
     </div>
